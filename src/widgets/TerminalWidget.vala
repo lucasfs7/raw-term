@@ -2,10 +2,10 @@ public class TerminalWidget : Vte.Terminal {
     GLib.Pid child_pid;
 
     public TerminalWidget () {
-        start ();
+        start_shell ();
     }
 
-    protected void start () {
+    protected void start_shell () {
         string shell = Vte.get_user_shell ();
 
         spawn_sync (
