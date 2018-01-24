@@ -15,7 +15,7 @@ public class TermWindow : Gtk.Window {
         var header_context = header.get_style_context ();
         header_context.add_class (Gtk.STYLE_CLASS_FLAT);
 
-        var terminal = new Vte.Terminal ();
+        var terminal = new TerminalWidget ();
 
         set_titlebar (header);
         add (terminal);
