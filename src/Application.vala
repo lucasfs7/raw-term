@@ -12,6 +12,7 @@ public class RADTerm : Gtk.Application {
         term_window.show_all ();
 
         var quit_action = new SimpleAction ("quit", null);
+
         add_action (quit_action);
         add_accelerator ("<Control>q", "app.quit", null);
 
