@@ -1,11 +1,12 @@
 public class TerminalWidget : Vte.Terminal {
+    GLib.Pid child_pid;
 
     public TerminalWidget () {
         start ();
     }
 
     protected void start () {
-        var shell = Vte.get_user_shell ();
+        string shell = Vte.get_user_shell ();
 
         spawn_sync (
             Vte.PtyFlags.DEFAULT,
@@ -14,7 +15,7 @@ public class TerminalWidget : Vte.Terminal {
             null,
             SpawnFlags.SEARCH_PATH,
             null,
-            null,
+            out this.child_pid,
             null
         );
     }
