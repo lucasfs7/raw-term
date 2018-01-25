@@ -27,5 +27,10 @@ public class TermWindow : Gtk.Window {
 
         set_titlebar (header);
         add (terminal);
+
+        terminal.window_title_changed.connect (() => {
+            string new_title = terminal.get_window_title ();
+            header.set_title (new_title);
+        });
     }
 }
