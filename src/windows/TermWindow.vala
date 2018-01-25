@@ -32,5 +32,9 @@ public class TermWindow : Gtk.Window {
             string new_title = terminal.get_window_title ();
             header.set_title (new_title);
         });
+
+        terminal.child_exited.connect (() => {
+            destroy ();
+        });
     }
 }
