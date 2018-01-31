@@ -28,16 +28,20 @@ public class TerminalWidget : Vte.Terminal {
     protected void start_shell () {
         string shell = Vte.get_user_shell ();
 
-        spawn_sync (
-            Vte.PtyFlags.DEFAULT,
-            null,
-            { shell },
-            null,
-            SpawnFlags.SEARCH_PATH,
-            null,
-            out this.child_pid,
-            null
-        );
+        try {
+            spawn_sync (
+                Vte.PtyFlags.DEFAULT,
+                null,
+                { shell },
+                null,
+                SpawnFlags.SEARCH_PATH,
+                null,
+                out this.child_pid,
+                null
+            );
+        } catch (Error e) {
+            warning (e.message);
+        }
     }
 
     protected void build_color_palette () {
