@@ -1,7 +1,7 @@
-public class RADTerm : Gtk.Application {
-    public RADTerm () {
+public class RawTerm : Gtk.Application {
+    public RawTerm () {
         Object (
-            application_id: "com.github.lucasfs7.rad-term",
+            application_id: "com.github.lucasfs7.raw-term",
             flags: ApplicationFlags.FLAGS_NONE
         );
     }
@@ -24,7 +24,7 @@ public class RADTerm : Gtk.Application {
     }
 
     public static int main (string[] args) {
-        var app = new RADTerm ();
+        var app = new RawTerm ();
         return app.run (args);
     }
 }
