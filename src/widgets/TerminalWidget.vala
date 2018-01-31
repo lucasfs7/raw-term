@@ -27,11 +27,12 @@ public class TerminalWidget : Vte.Terminal {
 
     protected void start_shell () {
         string shell = Vte.get_user_shell ();
+        string dir = Environment.get_home_dir ();
 
         try {
             spawn_sync (
                 Vte.PtyFlags.DEFAULT,
-                null,
+                dir,
                 { shell },
                 null,
                 SpawnFlags.SEARCH_PATH,
