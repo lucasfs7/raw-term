@@ -10,7 +10,7 @@ public class TermWindow : Gtk.Window {
 
     construct {
         var gtk_settings = Gtk.Settings.get_default ();
-        gtk_settings.gtk_application_prefer_dark_theme = false;
+        gtk_settings.gtk_application_prefer_dark_theme = true;
 
         var window_context = get_style_context ();
         var window_state = window_context.get_state ();
