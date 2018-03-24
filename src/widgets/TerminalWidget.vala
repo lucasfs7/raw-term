@@ -78,6 +78,6 @@ public class TerminalWidget : Vte.Terminal {
         set_colors (color_foreground, color_background, color_palette);
         set_allow_bold (true);
         set_font_scale (1.2);
-        margin = 20;
+        margin = 10;
     }
 }
